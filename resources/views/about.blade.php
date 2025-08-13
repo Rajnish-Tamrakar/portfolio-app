@@ -30,7 +30,7 @@
                 <div data-aos="fade-up">
                     <h2 class="h1 mb-4">My Story</h2>
                     <p class="lead mb-4">
-                        Hello! I'm John Doe, a passionate full-stack developer based in San Francisco. 
+                        Hello! I'm Rajnish Tamrakar, a passionate full-stack developer based in India. 
                         My journey into web development began during my computer science studies, 
                         where I discovered my love for creating digital solutions that make a difference.
                     </p>
@@ -186,7 +186,7 @@
 </section>
 
 <!-- CTA Section -->
-<section class="section-padding bg-primary text-white">
+<section class="section-padding text-white" style="background-color: #244166">
     <div class="container text-center" data-aos="fade-up">
         <h2 class="h1 mb-4">Let's Work Together</h2>
         <p class="lead mb-4">

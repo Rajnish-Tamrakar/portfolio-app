@@ -14,7 +14,7 @@
             padding: 20px;
         }
         .header {
-            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            background: linear-gradient(135deg, #244166 0%, #1e40af 100%);
             color: white;
             padding: 30px;
             border-radius: 8px 8px 0 0;
@@ -30,11 +30,11 @@
             padding: 15px;
             background: white;
             border-radius: 6px;
-            border-left: 4px solid #2563eb;
+            border-left: 4px solid #244166;
         }
         .field-label {
             font-weight: 600;
-            color: #2563eb;
+            color: #244166;
             margin-bottom: 5px;
         }
         .field-value {

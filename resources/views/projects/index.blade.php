@@ -122,7 +122,7 @@
 </section>
 
 <!-- CTA Section -->
-<section class="section-padding bg-primary text-white">
+<section class="section-padding text-white" style="background-color: #244166">
     <div class="container text-center" data-aos="fade-up">
         <h2 class="h1 mb-4">Have a Project in Mind?</h2>
         <p class="lead mb-4">

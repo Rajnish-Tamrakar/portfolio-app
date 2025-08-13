@@ -9,7 +9,7 @@
         <div class="row align-items-center">
             <div class="col-lg-6 hero-content" data-aos="fade-right">
                 <h1 class="display-4 fw-bold mb-4">
-                    Hi, I'm <span class="text-warning">John Doe</span>
+                    Hi, I'm <span class="text-warning">Rajnish Tamrakar</span>
                 </h1>
                 <h2 class="h4 mb-4 opacity-90">Full Stack Developer</h2>
                 <p class="lead mb-4 opacity-80">
@@ -182,7 +182,7 @@
 @endif
 
 <!-- CTA Section -->
-<section class="section-padding bg-primary text-white">
+<section class="section-padding text-white" style="background-color: #244166">
     <div class="container text-center" data-aos="fade-up">
         <h2 class="h1 mb-4">Ready to Work Together?</h2>
         <p class="lead mb-4">
