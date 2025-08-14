@@ -1,56 +1,56 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    
+
     <title>@yield('title', 'Portfolio') - {{ config('app.name', 'Portfolio') }}</title>
-    
+
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @stack('styles')
 </head>
+
 <body data-bs-theme="light">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav id="mainNav" class="navbar navbar-expand-lg fixed-top py-3">
         <div class="container">
-            <a class="navbar-brand" href="{{ route('home') }}">
+            <a class="navbar-brand fw-bold" href="{{ route('home') }}" style="background: linear-gradient(90deg, #ff8177, #ffcc70); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                 <i class="bi bi-code-slash me-2"></i>Portfolio
             </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto me-3">
+                <ul class="navbar-nav ms-auto gap-lg-4">
+                    @php
+                    $navLinks = [
+                    ['route' => 'home', 'label' => 'Home'],
+                    ['route' => 'about', 'label' => 'About'],
+                    ['route' => 'projects.index', 'label' => 'Projects'],
+                    ['route' => 'skills', 'label' => 'Skills'],
+                    ['route' => 'contact', 'label' => 'Contact'],
+                    ];
+                    @endphp
+
+                    @foreach($navLinks as $link)
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">Home</a>
+                        <a class="nav-link {{ request()->routeIs($link['route'].'*') ? 'active' : '' }}" href="{{ route($link['route']) }}">
+                            {{ $link['label'] }}
+                        </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}" href="{{ route('about') }}">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('projects.*') ? 'active' : '' }}" href="{{ route('projects.index') }}">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('skills') ? 'active' : '' }}" href="{{ route('skills') }}">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a>
-                    </li>
+                    @endforeach
                 </ul>
-                
-                <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">
-                    <i class="bi bi-sun-fill" id="theme-icon"></i>
-                </button>
             </div>
         </div>
     </nav>
@@ -85,7 +85,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
+
     <script>
         // Initialize AOS
         AOS.init({
@@ -99,7 +99,7 @@
             const html = document.documentElement;
             const themeIcon = document.getElementById('theme-icon');
             const currentTheme = html.getAttribute('data-bs-theme');
-            
+
             if (currentTheme === 'dark') {
                 html.setAttribute('data-bs-theme', 'light');
                 themeIcon.className = 'bi bi-sun-fill';
@@ -116,14 +116,14 @@
             const savedTheme = localStorage.getItem('theme') || 'light';
             const html = document.documentElement;
             const themeIcon = document.getElementById('theme-icon');
-            
+
             html.setAttribute('data-bs-theme', savedTheme);
             themeIcon.className = savedTheme === 'dark' ? 'bi bi-moon-fill' : 'bi bi-sun-fill';
         });
 
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
@@ -135,7 +135,15 @@
             });
         });
     </script>
-    
+
+    <script>
+        // Solid background on scroll
+        window.addEventListener('scroll', function() {
+            document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
+
     @stack('scripts')
 </body>
+
 </html>

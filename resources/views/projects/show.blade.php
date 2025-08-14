@@ -225,16 +225,16 @@
             </div>
             @endforeach
         </div>
-    </div>
+    </div>  
 </section>
 @endif
 
 <!-- CTA Section -->
-<section class="section-padding bg-primary text-white">
+<section class="section-padding hero-section-footer text-white">
     <div class="container text-center" data-aos="fade-up">
         <h2 class="h1 mb-4">Interested in Working Together?</h2>
         <p class="lead mb-4">
-            I'm always open to discussing new projects and opportunities. 
+            I'm always open to discus  sing new projects and opportunities. 
             Let's create something amazing together!
         </p>
         <div class="d-flex flex-wrap justify-content-center gap-3">

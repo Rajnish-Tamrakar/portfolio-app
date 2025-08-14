@@ -18,11 +18,15 @@ body {
 }
 
 .hero-section {
-    background: linear-gradient(135deg, var(--primary-color) 0%, #1e40af 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #f0f0f0fd 100%);
     color: white;
     padding: 100px 0;
     position: relative;
     overflow: hidden;
+}
+
+.hero-section-footer {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #f0f0f0fd 100%);
 }
 
 .hero-section::before {
@@ -85,8 +89,8 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: #1d4ed8;
-    border-color: #1d4ed8;
+    background-color: #344d8f;
+    border-color: #344d8f;
     transform: translateY(-2px);
 }
 
@@ -195,4 +199,39 @@ body {
 
 [data-bs-theme="dark"] .theme-toggle:hover {
     background-color: rgba(255, 255, 255, 0.1);
+}
+
+#mainNav {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+#mainNav.scrolled {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Nav links modern hover */
+.navbar-nav .nav-link {
+    position: relative;
+    padding-bottom: 4px; 
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color) 0%, #f0f0f0fd 100%);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+    left: 0;
 }

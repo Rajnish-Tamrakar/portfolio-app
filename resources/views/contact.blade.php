@@ -258,7 +258,7 @@
 </section>
 
 <!-- CTA Section -->
-<section class="section-padding text-white" style="background-color: #244166">
+<section class="section-padding text-white hero-section-footer">
     <div class="container text-center" data-aos="fade-up">
         <h2 class="h1 mb-4">Ready to Start Your Project?</h2>
         <p class="lead mb-4">
