@@ -24,7 +24,7 @@
     <nav id="mainNav" class="navbar navbar-expand-lg fixed-top py-3">
         <div class="container">
             <a class="navbar-brand fw-bold" href="{{ route('home') }}" style="background: linear-gradient(90deg, #ff8177, #ffcc70); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                <i class="bi bi-code-slash me-2"></i>Portfolio
+                <i class="bi bi-code-slash me-2"></i>Rajnish Tamrakar
             </a>
 
             <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
